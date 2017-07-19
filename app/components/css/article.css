@@ -1,0 +1,103 @@
+:local .albumBox{
+    width: 890px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+:local .albumTitleBox{
+    font-size: 16px;
+    border-left: 4px solid #2EA56B;
+    margin: 20px 0;
+    padding-left: 10px;
+}
+:local .articleAllListBox{
+    border-top: 1px solid #e8e8e8;
+    overflow: hidden;
+    position: relative;
+}
+:local .articleListDetailBox{
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px 0;
+    padding-left: 173px;
+    overflow: hidden;
+    font-size: 14px;
+    display: block;
+    color: rgba(0,0,0,0.9);
+}
+:local .articleListDetailBox i{
+    margin-right: 5px;
+}
+:local .articleImg{
+    width: 163px;
+    height: 90px;
+    margin-left: -173px;
+    float: left;
+}
+:local .articleListDetailBox>p{
+    position: absolute;
+    left: 173px;
+    right: 0;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+:local .articleListDetailBox>span{
+    position: absolute;
+    top: 33px;
+    left: 173px;
+    right: 0;
+    color: #aaa;
+}
+:local .articleActiveBox{
+    position: absolute;
+    bottom: 10px;
+    left: 173px;
+    right: 0;
+    color: #aeaeae;
+    text-align: right;
+}
+:local .articleActiveBox span{
+    margin-left: 30px;
+}
+:local .choice{
+    position: absolute;
+    right: 0;
+}
+/*文章列表  */
+:local .articleListBox{
+    color: rgba(0,0,0,0.6);
+}
+:local .articleListBox span{
+    color: #000;
+}
+:local .articleListBox a{
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+    :local .albumBox{
+        width: 320px;
+    }
+    :local .articleActiveBox span{
+        margin-left: 10px;
+    }
+    :local .articleListDetailBox{
+        padding-left: 110px;
+    }
+    :local .articleImg{
+        width: 100px;
+        height: 60px;
+        margin-left: -110px;
+    }
+    :local .articleListDetailBox>p{
+        left: 110px;
+    }
+    :local .articleListDetailBox>span{
+        left: 110px;
+    }
+    :local .articleActiveBox{
+        left: 110px;
+    }
+}

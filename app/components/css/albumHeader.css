@@ -1,0 +1,62 @@
+:local .albumHeaderBox{
+    width: 100%;
+    height: 250px;
+}
+:local .albumHeaderBox>img{
+    width: 100%;
+    height: 100%;
+}
+:local .albumHeaderContentBox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+}
+:local .albumHeaderContentBox img{
+    width: 65px;
+    height: 65px;
+    border:2px solid #fff;
+    border-radius: 50%;
+}
+:local .albumHeaderContentBox p{
+    width: 350px;
+    margin: 0 auto;
+}
+:local .usersName{
+    font-size: 20px;
+}
+:local .usersNote{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    
+}
+:local .usersInfoNum a{
+    width: 25%;
+    font-size: 20px;
+    display: inline-block;
+    color: #fff;
+}
+:local .usersInfo a{
+    width: 24.5%;
+    font-size: 16px;
+    display: inline-block;
+    border-right: 1px solid #fff;
+    color: #fff;
+}
+:local .usersInfo a:last-child{
+    border-right: none;
+}
+
+@media screen and (max-width:768px){
+    :local .albumHeaderContentBox p{
+        width: 320px;
+        margin: 0 auto;
+    }
+
+}

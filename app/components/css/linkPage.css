@@ -1,0 +1,408 @@
+:local .linkPageBox{
+    width: 100%;
+    min-height: 100%;
+}
+:local .Items{
+    width: 100%;
+    height: 900px;
+    background: #eee url('../../../build/images/family.jpg') 50% 50% no-repeat; 
+}
+:local .ItemsTwo{
+    width: 50%;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+.hand{
+    margin-top: 109px;
+    width: auto;
+    height: auto;
+
+    transform-origin: center center;
+    transform:scale(1);
+    animation:showHand 2s ease;
+}
+@keyframes showHand{
+    from {opacity: 0;width:0.1px;height: 0.1px}
+    to{opacity: 1;width:323px;height: 683px;}
+}
+:local .oneLeft{
+    text-align: left;
+    padding-top: 210px;
+}
+:local .oneLeft h1{
+    font-size: 32px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: normal;
+}
+:local .appDownload{
+    margin-top: 40px;
+    overflow: hidden;
+    padding-left: 169px;
+}
+:local .appDownload img{
+    float: left;
+    margin-left: -169px;
+}
+:local .appDownload a{
+    width: 150px;
+    display: block;
+    padding: 10px;
+    border:1px solid #eee;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+:local .appDownload a:hover{
+    background: rgba(255,255,255,0.3);
+    color: #000;
+}
+/*feature  */
+:local .features{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+:local .ItemsThree{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+:local .featuresOne{
+    text-align: right;
+    padding-right:90px; 
+    min-height: 62px;
+    position: relative;
+    margin-bottom: 20px;
+}
+:local .featuresOne h3{
+    color: #676a6c;
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: normal;
+}
+:local .featuresOne p{
+    color: #aeaeae;
+    font-size: 14px;
+    margin-top: 10px;
+}
+:local .featuresOne i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #1ab394;
+    font-size: 40px;
+    border:1px solid #1ab394;
+    text-align: center;
+    line-height: 60px;
+}
+:local .featuresTitle{
+    width: 100%;
+    text-align: center;
+}
+:local .featuresTitle span{
+    width: 50px;
+    height: 2px;
+    background: #1ab394;
+    margin-top: 50px;
+    display: inline-block;
+}
+:local .featuresTitle h3{
+    font-size: 30px;
+    font-weight: 200px;
+}
+:local .featuresTitle p{
+    font-size: 14px;;
+    color: #aeaeae;
+    margin-bottom: 20px;
+}
+:local .col_3_c{
+    text-align: center;
+}
+:local .featuresRight{
+    padding:0 0 0 90px;
+    text-align: left;
+}
+:local .featuresRight i{
+    left: 0;
+}
+.featuresLeft{
+    
+   
+}
+/* #featuresLeft{
+     transform:translateX(0); 
+    animation:showFeatureLeft 2s ease;
+}
+@keyframes showFeatureLeft{
+    from {opacity: 0;transform:translateX(-100%)}
+    to{opacity: 1;transform:translateX(0)}
+} */
+#featuresRight{
+    transform:translateX(0);
+    animation:showFeatureRight 2s ease;
+}
+@keyframes showFeatureRight{
+    from {opacity: 0;transform:translateX(100%)}
+    to{opacity: 1;transform:translateX(0)}
+}
+#featuresCenter{
+    transform-origin: center center;
+    transform:scale(1);
+    animation:showFeatureCenter 2s ease;
+}
+@keyframes showFeatureCenter{
+    from {opacity:0; transform:scale(0.1);}
+    to{opacity: 1;transform:scale(1);}
+}
+
+/*discover  */
+:local .discover{
+    
+}
+:local .discoverItem{
+    width: 50%;
+    height: 430px;
+    float: left;
+    text-align: center;
+}
+:local .discoverItem_1{
+    padding-top: 40px;
+    font-size: 14px;
+    color: #aeaeae;
+    text-align: left;
+}
+:local .discoverItem p{
+    margin-bottom: 10px;
+}
+:local .span{
+    font-size: 10px;
+    color: #000;
+}
+:local .h3{
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #000;
+}
+:local .label{
+    text-align: right;
+}
+#discoverTopLeft{
+    height: 390px;
+}
+#discoverTopLeft p{
+    opacity: 0;
+    margin-left: -50%;
+}
+/* #discoverTopLeft{
+    transform:translateX(0);
+    animation:showDiscoverTopLeft 2s ease;
+}
+@keyframes showDiscoverTopLeft{
+    from {opacity: 0;transform:translateX(-100%)}
+    to{opacity: 1;transform:translateX(0)}
+} */
+#discoverBottomLeft{
+    position: relative;
+}
+#discoverBottomLeft img{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+} 
+/* #discoverBottomLeft{
+    transform:translateX(0);
+    animation:showDiscoverBottomLeft 2s ease;
+}
+@keyframes showDiscoverBottomLeft{
+    from {opacity: 0;transform:translateX(-100%)}
+    to{opacity: 1;transform:translateX(0)}
+} */
+ #discoverTopRight{
+    position: relative;
+}
+#discoverTopRight img{
+    position: absolute;
+    right: 0;
+    opacity: 0;
+} 
+/* #discoverTopRight{
+    transform:translateX(0);
+    animation:showDiscoverTopRight 2s ease;
+}
+@keyframes showDiscoverTopRight{
+    from {opacity: 0;transform:translateX(100%)}
+    to{opacity: 1;transform:translateX(0)}
+} */
+#discoverBottomRight{
+    height: 390px;
+}
+#discoverBottomRight p{
+    opacity: 0;
+    margin-left: 50%;
+}
+/* #discoverBottomRight{
+    transform:translateX(0);
+    animation:showDiscoverBottomRight 2s ease;
+}
+@keyframes showDiscoverBottomRight{
+    from {opacity: 0;transform:translateX(100%)}
+    to{opacity: 1;transform:translateX(0)}
+} */
+
+/*app  */
+:local .app{
+    width: 1020px;
+    min-height: 860px;
+    padding: 0 90px;
+    text-align: center;
+    position: relative;
+}
+:local .appDetailsBox{
+    width: 300px;
+    margin:0 20px;
+    color: #aeaeae;
+    float: left;
+    opacity: 0;
+}
+:local .appDetailsBox li{
+    padding: 20px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+:local .appDetailsBox li:last-child{
+    border-bottom: none;
+}
+:local .appTitle{
+    background: #1ab394;
+    font-size: 18px;
+    color: #fff;    
+    font-weight: bold;
+}
+:local .green{
+    color: #1ab394;
+}
+:local .appDetailsBox a{
+    display: inline-block;
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #1ab394;
+    color: #fff;
+    margin-right: 10px;
+}
+:local .appOdd{
+     margin-top: 40px; 
+}
+
+/*contact  */
+:local .contact{
+    background: url("../../../build/images/word_map.png") 50% 50%;
+}
+:local .contactItem{
+    width: 50%;
+    float: left;
+    color: #676a6c;
+    font-size: 14px;
+    height: 85px;
+}
+:local .contactItem p{
+    line-height: 1.5;
+}
+:local .contactItemIndex p{
+    margin-left: 200px;
+}
+:local .green{
+    color: #1ab394;
+}
+:local .contactEmail{
+    width: 150px;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    background: #1ab394;
+    color: #fff;
+    border-radius: 5px;
+    margin:40px auto 10px auto;
+}
+:local .contactTips{
+    text-align: center;
+    color: #aeaeae;
+    padding: 10px 0;
+}
+:local .contactTips i{
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 20px;
+    background: #1ab394;
+    color: #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+:local .contact>p{
+    text-align: center;
+    color: #aeaeae;
+}
+
+/*响应式布局  */
+@media screen and (max-width:768px){
+    :local .Items{
+        width: 95%;
+        margin: 0 auto;
+        padding-left: 5%;
+    }
+    :local .oneLeft h1{
+        font-size: 28px;
+    }
+    :local .features{
+        width: 320px;
+        margin: 0 auto;
+    }
+    :local .app{
+        padding: 0;
+    }
+    :local .appDetailsBox{
+        margin: 0;
+        width: 100%;
+    }
+    :local .ItemsTwo{
+        width: 100%;
+    }
+    :local .ItemsThree{
+        width: 100%;
+    }
+    :local .discoverItem{
+        width: 100%;
+    }
+    :local .discoverItem_1{
+        text-indent: 0;
+    }
+    :local .contactItem{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    :local .contactItemIndex p{
+        margin-left: 0;
+    }
+    #handBox{
+        display: none;
+    }
+    :local .discoverItem img{
+        margin-top: 20px;
+    }
+    :local .col_3_c{
+        margin-bottom: 20px;
+    }
+
+}

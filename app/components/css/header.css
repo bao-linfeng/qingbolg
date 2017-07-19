@@ -1,0 +1,11 @@
+:local .headerBox{
+    width: 890px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+@media screen and (max-width:768px){
+    :local .headerBox{
+        width: 320px;
+    }
+}

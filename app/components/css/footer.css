@@ -1,0 +1,16 @@
+:local .footerBox{
+    width: 890px;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 16px;
+    color: #919191;
+    overflow: hidden;
+}
+:local .footerBox img{
+    float: right;
+}
+@media screen and (max-width:768px){
+    :local .footerBox{
+        width: 320px;
+    }
+}

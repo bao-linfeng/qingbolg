@@ -1,0 +1,84 @@
+:local .albumBox{
+    width: 890px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+:local .albumTitleBox{
+    font-size: 16px;
+    border-left: 4px solid #2EA56B;
+    margin: 20px 0;
+    padding-left: 10px;
+}
+:local .albumListBox{
+    padding: 20px 0;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+:local .albumListDetailBox{
+    width: 192px;
+    height: 176px;
+    background: #f7f7f7;
+    padding: 10px;
+    font-size: 16px;
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    position: relative;
+    display: block;
+    color: #000;
+}
+:local .albumListDetailBox:nth-of-type(4n){
+    margin-right: 0;
+}
+:local .pictureBg{
+    width: 100%;
+    height: 144px;
+    margin-bottom: 5px;
+}
+
+/*粉丝  */
+:local .fansBox{
+    text-align: center;
+}
+:local .fansBox span{
+    font-size: 14px;
+}
+:local .fansBox label{
+    width: 1px;
+    height: 10px;
+    margin: 0 20px;
+    background: #000;
+    display: inline-block;
+}
+:local .fanspic{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border:1px solid #fff;
+    top: 50px;
+    left: 50%;
+    margin-left: -23px;
+    border-radius: 50%;
+}
+:local .fansBox p{
+    position: absolute;
+    top: 100px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    right: 0;
+    left: 0;
+}
+@media screen and (max-width:768px){
+    :local .albumBox{
+        width: 320px;
+    }
+    :local .albumListDetailBox{
+        width: 94%;
+        padding: 10px 3% 10px 3%;
+        margin-right: 0;
+    }
+
+}
