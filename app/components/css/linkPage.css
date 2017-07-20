@@ -15,16 +15,13 @@
 }
 .hand{
     margin-top: 109px;
-    width: auto;
-    height: auto;
-
     transform-origin: center center;
     transform:scale(1);
     animation:showHand 2s ease;
 }
 @keyframes showHand{
-    from {opacity: 0;width:0.1px;height: 0.1px}
-    to{opacity: 1;width:323px;height: 683px;}
+    from {opacity: 0;transform:scale(0.001)}
+    to{opacity: 1;transform:scale(1)}
 }
 :local .oneLeft{
     text-align: left;
@@ -133,26 +130,33 @@
     left: 0;
 }
 .featuresLeft{
-    
-   
+    left: -100%;
+    opacity: 0;
 }
-/* #featuresLeft{
+ /* #featuresLeft{
      transform:translateX(0); 
     animation:showFeatureLeft 2s ease;
 }
 @keyframes showFeatureLeft{
     from {opacity: 0;transform:translateX(-100%)}
     to{opacity: 1;transform:translateX(0)}
-} */
-#featuresRight{
+}  */
+.featuresRight{
+    right: -100%;
+    opacity: 0;
+}
+/* #featuresRight{
     transform:translateX(0);
     animation:showFeatureRight 2s ease;
 }
 @keyframes showFeatureRight{
     from {opacity: 0;transform:translateX(100%)}
     to{opacity: 1;transform:translateX(0)}
+} */
+#featuresCenter img{
+    opacity: 0;
 }
-#featuresCenter{
+/* #featuresCenter img{
     transform-origin: center center;
     transform:scale(1);
     animation:showFeatureCenter 2s ease;
@@ -160,17 +164,18 @@
 @keyframes showFeatureCenter{
     from {opacity:0; transform:scale(0.1);}
     to{opacity: 1;transform:scale(1);}
-}
+} */
 
 /*discover  */
 :local .discover{
-    
+    min-height: 975px;
 }
 :local .discoverItem{
     width: 50%;
-    height: 430px;
+    /* height: 430px; */
     float: left;
     text-align: center;
+    overflow: hidden;
 }
 :local .discoverItem_1{
     padding-top: 40px;
@@ -195,12 +200,12 @@
 :local .label{
     text-align: right;
 }
-#discoverTopLeft{
-    height: 390px;
-}
 #discoverTopLeft p{
     opacity: 0;
-    margin-left: -50%;
+    margin-left: -100%;
+}
+:local .discoverTopLeftInline{
+    padding-left: 200px;
 }
 /* #discoverTopLeft{
     transform:translateX(0);
@@ -212,10 +217,11 @@
 } */
 #discoverBottomLeft{
     position: relative;
+    min-height: 430px;
 }
 #discoverBottomLeft img{
     position: absolute;
-    left: 0;
+    left: -100%;
     opacity: 0;
 } 
 /* #discoverBottomLeft{
@@ -228,10 +234,11 @@
 } */
  #discoverTopRight{
     position: relative;
+    min-height: 430px;
 }
 #discoverTopRight img{
     position: absolute;
-    right: 0;
+    right: -100%;
     opacity: 0;
 } 
 /* #discoverTopRight{
@@ -242,12 +249,9 @@
     from {opacity: 0;transform:translateX(100%)}
     to{opacity: 1;transform:translateX(0)}
 } */
-#discoverBottomRight{
-    height: 390px;
-}
 #discoverBottomRight p{
     opacity: 0;
-    margin-left: 50%;
+    margin-left: -100%;
 }
 /* #discoverBottomRight{
     transform:translateX(0);
@@ -264,13 +268,16 @@
     min-height: 860px;
     padding: 0 90px;
     text-align: center;
-    position: relative;
+}
+:local .appListBox{
+    width: 33.33%;
+    min-height: 568px;
+    float: left;
 }
 :local .appDetailsBox{
     width: 300px;
     margin:0 20px;
     color: #aeaeae;
-    float: left;
     opacity: 0;
 }
 :local .appDetailsBox li{
@@ -303,7 +310,17 @@
 :local .appOdd{
      margin-top: 40px; 
 }
-
+#appLeft{
+    margin-left: -100%;
+}
+#appCenter{
+    height: 0;
+    opacity: 1;
+}
+#appRight{
+    margin-right: -100%;
+    float: right;
+}
 /*contact  */
 :local .contact{
     background: url("../../../build/images/word_map.png") 50% 50%;
@@ -398,11 +415,17 @@
     #handBox{
         display: none;
     }
-    :local .discoverItem img{
+    :local .discoverItem{
         margin-top: 20px;
     }
     :local .col_3_c{
         margin-bottom: 20px;
+    }
+    :local .discoverTopLeftInline{
+        padding-left: 0;
+    }
+    :local .appListBox{
+        width: 100%;
     }
 
 }

@@ -12,16 +12,73 @@ class linkPage extends React.Component{
     }
 
     componentDidMount(){
-        $('#app').mouseover(function(){
-            $('#appLeft').animate({opacity:1},1000);
-            $('#appCenter').animate({opacity:1},1500);
-            $('#appRight').animate({opacity:1},2000);
+        // $('#app').mouseover(function(){
+        //     $('#appLeft').animate({opacity:1},1000);
+        //     $('#appCenter').animate({opacity:1},1500);
+        //     $('#appRight').animate({opacity:1},2000);
+        // });
+        // $('#features').mouseover(function(){
+        //     $('.featuresLeft').animate({left:0,opacity:1},1000);
+        //     $('.featuresRight').animate({right:0,opacity:1},1000);
+        // });
+        // $('#discover').mouseover(function(){
+        //     $('#discoverTopRight img').animate({right:"50%",marginRight:"-106px",opacity:1},1000);
+        //     $('#discoverBottomLeft img').animate({left:"50%",marginLeft:"-106px",opacity:1},1000);
+        //     $('#discoverTopLeft p').animate({marginLeft:0,opacity:1},1000);
+        //     $('#discoverBottomRight p').animate({marginRight:0,opacity:1},1000);
+        // });
+        // feature
+        let featuresLeft=$('.featuresLeft').offset().top;
+        let featuresCenter=$('#featuresCenter').offset().top;
+        let featuresRight=$('.featuresRight').offset().top;
+        // discover
+        let discoverTopLeft=$('#discoverTopLeft').offset().top;
+        let discoverTopRight=$('#discoverTopRight').offset().top;
+        let discoverBottomLeft=$('#discoverBottomLeft').offset().top;
+        let discoverBottomRight=$('#discoverBottomRight').offset().top;
+        //app
+        let appLeft=$('#appLeft').offset().top;
+        let appCenter=$('#appCenter').offset().top;
+        let appRight=$('#appRight').offset().top;
+        let wTop=$(window).height();
+        $(window).resize(function(){
+            let wTop=$(window).height();
         });
-        $('#discover').mouseover(function(){
-            $('#discoverTopRight img').animate({right:"50%",marginRight:"-106px",opacity:1},1000);
-            $('#discoverBottomLeft img').animate({left:"50%",marginLeft:"-106px",opacity:1},1000);
-            $('#discoverTopLeft p').animate({marginLeft:"0",opacity:1},1000);
-            $('#discoverBottomRight p').animate({marginLeft:"0",opacity:1},1000);
+        $(".XwzeqkdNshtnyHYGYfwxD").scroll(function(){
+            let dTop = $(".XwzeqkdNshtnyHYGYfwxD").scrollTop();//滑动元素距顶部距离
+            // feature
+            if(dTop > featuresRight){
+                $('.featuresRight').animate({right:0,opacity:1},1500);
+            }
+            if((dTop + wTop*0.5) > featuresCenter){
+                $('#featuresCenter img').animate({opacity:1},1500);
+            }
+            if((dTop + wTop*0.5) > featuresLeft){
+                $('.featuresLeft').animate({left:0,opacity:1},1500);
+            }
+            // discover
+            if((dTop + wTop*0.5) > discoverTopLeft){
+                $('#discoverTopLeft p').animate({marginLeft:0,opacity:1},1500);
+            }
+            if((dTop + wTop*0.5) > discoverTopRight){
+                $('#discoverTopRight img').animate({right:"50%",marginRight:"-106px",opacity:1},1500);
+            }
+            if((dTop + wTop*0.5) > discoverBottomLeft){
+                $('#discoverBottomLeft img').animate({left:"50%",marginLeft:"-106px",opacity:1},1500);
+            }
+            if((dTop + wTop*0.5) > discoverBottomRight){
+                $('#discoverBottomRight p').animate({marginLeft:0,opacity:1},1500);
+            }
+            //app
+            if((dTop + wTop*0.5) > appLeft){
+                $('#appLeft').animate({opacity:1,marginLeft:0},1500);
+            }
+            if((dTop + wTop*0.5) > appCenter){
+                $('#appCenter').animate({height:"609px"},2000);
+            }
+            if((dTop + wTop*0.5) > appRight){
+                $('#appRight').animate({opacity:1,marginRight:0},1500);
+            }
         });
     }
 
@@ -41,7 +98,7 @@ class linkPage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className={style.features}>
+                <div className={style.features} id="features">
                     <div className={style.featuresTitle}>
                         <span></span>
                         <h3>Features</h3>
@@ -77,25 +134,25 @@ class linkPage extends React.Component{
                         <img src="./images/overview.png" alt=""/>
                     </div>
                     <div className={style.ItemsThree+' '+style.featuresRights} id="featuresRight">
-                        <div className={style.featuresOne+' '+ style.featuresRight}>
+                        <div className={style.featuresOne+' '+ style.featuresRight+' featuresRight'}>
                             <h3>随记</h3>
                             <p>记录人生难忘的每一刻，分享我们成长与感动
                             </p>
                             <i className="fa fa-edit"></i>
                         </div>
-                        <div className={style.featuresOne+' '+ style.featuresRight}>
+                        <div className={style.featuresOne+' '+ style.featuresRight+' featuresRight'}>
                             <h3>微习惯</h3>
                             <p>每天小小1块钱，亲友打卡挑战，让我们以爱的方式，彼此监督共同养成好习惯。
                             </p>
                             <i className="fa fa-trophy"></i>
                         </div>
-                        <div className={style.featuresOne+' '+ style.featuresRight}>
+                        <div className={style.featuresOne+' '+ style.featuresRight+' featuresRight'}>
                             <h3>家庭树</h3>
                             <p>一个人是一片叶子，一个家庭是一个枝桠，一个家族才是一棵参树！
                             </p>
                             <i className="fa fa-tree"></i>
                         </div>
-                        <div className={style.featuresOne+' '+ style.featuresRight}>
+                        <div className={style.featuresOne+' '+ style.featuresRight+' featuresRight'}>
                             <h3>参易问道</h3>
                             <p>事疑解惑，启迪智慧！采用最古老的六爻占卜法，占卜问卦：问运势、问事业、问健康、问家庭、问婚姻，是您身边的易经命理大师！
                             </p>
@@ -110,12 +167,14 @@ class linkPage extends React.Component{
                         <p>发现更多精彩内容</p>
                     </div>
                     <div className={style.discoverItem+' '+style.discoverItem_1} id="discoverTopLeft">
-                        <p className={style.span}>相册</p>
-                        <p className={style.h3}>分享每一个美丽瞬间</p>
-                        <p>Lily手机相册中有两千张照片</p>
-                        <p>想把今年旅游拍的精品照分享给亲友</p>
-                        <p>无奈最近在朋友圈刷屏</p>
-                        <p className={style.label}>—2016 lily 的故事</p>
+                        <div className={style.discoverTopLeftInline+' discoverTopLeftInline'}>
+                            <p className={style.span}>相册</p>
+                            <p className={style.h3}>分享每一个美丽瞬间</p>
+                            <p>Lily手机相册中有两千张照片</p>
+                            <p>想把今年旅游拍的精品照分享给亲友</p>
+                            <p>无奈最近在朋友圈刷屏</p>
+                            <p className={style.label}>—2016 lily 的故事</p>
+                        </div>
                     </div>
                     <div className={style.discoverItem} id="discoverTopRight">
                         <img src="./images/create_album.png" alt=""/>
@@ -140,50 +199,56 @@ class linkPage extends React.Component{
                         <h3>App</h3>
                         <p>即刻拿起手机下载，与亲朋好友一起分享</p>
                     </div>
-                    <ul className={style.appDetailsBox+' '+style.appOdd} id="appLeft">
-                        <li className={style.appTitle}>Home+标准版</li>
-                        <li>标准版即可享有所有内容，与好友互动，分享内容</li>
-                        <li className={style.green}>免费</li>
-                        <li>相册，随记</li>
-                        <li>心愿，日程</li>
-                        <li>天气，地图</li>
-                        <li>亲子帐号</li>
-                        <li>群组聊天，发红包</li>
-                        <li>
-                            <Link to=""><i className="fa fa-apple"></i>IOS版本下载</Link>
-                            <Link to=""><i className="fa fa-android"></i>安卓版本下载</Link>
-                        </li>
-                    </ul>
-                    <ul className={style.appDetailsBox} id="appCenter">
-                        <li className={style.appTitle}>Home+家族版</li>
-                        <li>在标准版的基础上，集成了族谱管理</li>
-                        <li className={style.green}>￥1 / 帐号</li>
-                        <li>相册，随记</li>
-                        <li>心愿，日程</li>
-                        <li>天气，地图</li>
-                        <li>亲子帐号</li>
-                        <li>群组聊天，发红包</li>
-                        <li>族谱管理</li>
-                        <li>
-                            <Link to=""><i className="fa fa-apple"></i>IOS版本下载</Link>
-                            <Link to=""><i className="fa fa-android"></i>安卓版本下载</Link>
-                        </li>
-                    </ul>
-                    <ul className={style.appDetailsBox+' '+style.appOdd} id="appRight">
-                        <li className={style.appTitle}>Home+至尊版</li>
-                        <li>在家族版的基础上，对于族谱的管理，享受企业级的顾问服务</li>
-                        <li className={style.green}>联系我们</li>
-                        <li>相册，随记</li>
-                        <li>心愿，日程</li>
-                        <li>天气，地图</li>
-                        <li>亲子帐号</li>
-                        <li>群组聊天，发红包</li>
-                        <li>族谱管理</li>
-                        <li>企业级顾问服务</li>
-                        <li>
-                            <Link to=""><i className="fa fa-email"></i>联系我们</Link>
-                        </li>
-                    </ul>
+                    <div className={style.appListBox}>
+                        <ul className={style.appDetailsBox+' '+style.appOdd} id="appLeft">
+                            <li className={style.appTitle}>Home+标准版</li>
+                            <li>标准版即可享有所有内容，与好友互动，分享内容</li>
+                            <li className={style.green}>免费</li>
+                            <li>相册，随记</li>
+                            <li>心愿，日程</li>
+                            <li>天气，地图</li>
+                            <li>亲子帐号</li>
+                            <li>群组聊天，发红包</li>
+                            <li>
+                                <Link to=""><i className="fa fa-apple"></i>IOS版本下载</Link>
+                                <Link to=""><i className="fa fa-android"></i>安卓版本下载</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={style.appListBox}>
+                        <ul className={style.appDetailsBox} id="appCenter">
+                            <li className={style.appTitle}>Home+家族版</li>
+                            <li>在标准版的基础上，集成了族谱管理</li>
+                            <li className={style.green}>￥1 / 帐号</li>
+                            <li>相册，随记</li>
+                            <li>心愿，日程</li>
+                            <li>天气，地图</li>
+                            <li>亲子帐号</li>
+                            <li>群组聊天，发红包</li>
+                            <li>族谱管理</li>
+                            <li>
+                                <Link to=""><i className="fa fa-apple"></i>IOS版本下载</Link>
+                                <Link to=""><i className="fa fa-android"></i>安卓版本下载</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={style.appListBox}>
+                        <ul className={style.appDetailsBox+' '+style.appOdd} id="appRight">
+                            <li className={style.appTitle}>Home+至尊版</li>
+                            <li>在家族版的基础上，对于族谱的管理，享受企业级的顾问服务</li>
+                            <li className={style.green}>联系我们</li>
+                            <li>相册，随记</li>
+                            <li>心愿，日程</li>
+                            <li>天气，地图</li>
+                            <li>亲子帐号</li>
+                            <li>群组聊天，发红包</li>
+                            <li>族谱管理</li>
+                            <li>企业级顾问服务</li>
+                            <li>
+                                <Link to=""><i className="fa fa-email"></i>联系我们</Link>
+                            </li>
+                        </ul>
+                    </div>  
                 </div>
                 <div className={style.features+' '+style.contact}>
                     <div className={style.featuresTitle}>
